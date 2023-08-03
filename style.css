@@ -1,0 +1,298 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+*:focus {
+  outline: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;
+}
+
+.chat {
+  height: 100%;
+  display: flex;
+}
+
+.chat .sidebar {
+  width: 300px;
+  min-width: 300px;
+  background: #161315;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat .sidebar .search {
+  height: 50px;
+  min-height: 50px;
+  border-bottom: 1px solid;
+  position: relative;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.chat .sidebar .search input {
+  width: 100%;
+  height: 30px;
+  background: white;
+  border-radius: 30px;
+  font-size: 15px;
+  padding: 0 35px 0 15px;
+}
+
+.chat .sidebar .search i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 37px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.chat .sidebar .contacts {
+  overflow: auto;
+  flex: 1;
+}
+
+.chat .sidebar .contacts ul li a {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  padding: 0 10px;
+  color: whitesmoke;
+}
+
+.chat .sidebar .contacts ul li.active {
+  background-color: gray;
+}
+
+.chat .sidebar .contacts ul li a:hover {
+  background: grey;
+}
+.chat .sidebar .contacts ul li img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat .sidebar .contacts ul li a .contact .name {
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.chat .sidebar .contacts ul li a .notification {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #008000;
+  font-size: 11px;
+  color: white;
+  text-align: center;
+  line-height: 18px;
+  margin-left: auto;
+}
+
+.chat .sidebar .contacts ul li a .contact .message {
+  font-size: 13px;
+  color: #999;
+}
+
+.chat .content {
+  flex: 1;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat .content .message-header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.chat .content .message-header {
+  height: 50px;
+  min-height: 50px;
+  display: flex;
+  border-bottom: 1px solid;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background: #161315;
+}
+
+.chat .content .message-header .user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat .content .message-header .user-info .name {
+  font-size: 15px;
+  font-weight: 500px;
+  color: white;
+}
+
+.chat .content .message-header .user-info .last-seen {
+  font-size: 13px;
+  color: #999;
+}
+
+.chat .content .message-header .settings ul {
+  display: flex;
+}
+
+.chat .content .message-header .settings ul li {
+  margin-left: 10px;
+}
+
+.chat .content .message-header .settings ul li a {
+  font-size: 17px;
+  color: #999;
+}
+
+.chat .content .message-header .settings ul li a:hover {
+  color: #222;
+}
+
+.chat .content .message-area {
+  border-top: 1px solid;
+  background: #161315;
+  padding: 10px;
+  margin-top: auto;
+}
+
+.chat .content .message-area ul {
+  display: flex;
+  align-items: center;
+}
+
+.chat .content .message-area ul li.input {
+  flex: 1;
+}
+
+.chat .content .message-area ul li.input input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 36px;
+  border: 1px solid #ddd;
+  border-radius: 36px;
+  font-size: 15px;
+  padding: 0 15px;
+}
+
+.chat .content .message-area ul li a {
+  width: 36px;
+  height: 36px;
+  display: block;
+  background-color: #333;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 36px;
+}
+
+.chat .content .message-area ul li {
+  margin: 0 5px;
+}
+
+.chat .content .message-area ul li.emoji-btn a {
+  background: #ffdf00;
+}
+
+.chat .content .message-area ul li.microphone a {
+  background: #7fff00;
+}
+
+.chat .content .message-content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  overflow: auto;
+  background: #161315;
+}
+.chat .content .message-content .message {
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+.chat .content .message-content .message .message-bubble {
+  padding: 6px 12px;
+  font-size: 15px;
+  margin-top: 5px;
+  background: #008000;
+  align-self: flex-end;
+  position: relative;
+  border-radius: 50px;
+  text-align: center;
+  color: #000;
+  margin-left: 15px;
+}
+
+.chat .content .message-content .message .message-bubble::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 13px solid #008000;
+  border-right: 13px solid transparent;
+  border-top: 10px solid #008000;
+  border-bottom: 15px solid transparent;
+  left: 10px;
+  bottom: -15px;
+}
+
+.chat .content .message-content .message .time {
+  font-size: 10px;
+  color: #999;
+  text-align: end;
+}
+
+.chat .content .message-content .message.me {
+  align-self: flex-end;
+}
+
+.chat .content .message-content .message.me .time {
+  text-align: left;
+}
+
+.chat .content .message-content .message.me .message-bubble {
+  padding: 6px 12px;
+  font-size: 15px;
+  margin-top: 5px;
+  background: #008000;
+  align-self: flex-end;
+  position: relative;
+  border-radius: 50px;
+  text-align: center;
+  color: #000;
+  margin-left: 15px;
+}
+
+.chat .content .message-content .message.me .message-bubble::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-right: 13px solid #008000;
+  border-left: 13px solid transparent;
+  border-top: 10px solid #008000;
+  border-bottom: 15px solid transparent;
+  left: 90px;
+  bottom: -15px;
+}
